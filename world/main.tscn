@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkyte752bmgcf" path="res://player/player.tscn" id="1_itxqv"]
 [ext_resource type="Script" uid="uid://ox6sf1j3f40k" path="res://world/day_night.gd" id="1_tp5tb"]
-[ext_resource type="Script" uid="uid://c7rnes4hkop6l" path="res://interactables/interactive_box.gd.gd" id="2_v0l8b"]
+[ext_resource type="Script" uid="uid://c7rnes4hkop6l" path="res://interactables/interactive_box.gd" id="2_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://ru00dgmvt73y" path="res://interactables/work_point.tscn" id="3_4j5ol"]
 [ext_resource type="Script" uid="uid://fed1nmdoem02" path="res://ui/ui.gd" id="4_brvut"]
 [ext_resource type="Script" uid="uid://rxnc0gch44oa" path="res://interactables/work_point.gd" id="4_p1hux"]

@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://c17rguvsqx51v"]
+
+[ext_resource type="Script" uid="uid://d2cuk1klri7q" path="res://properties/property_house.gd" id="1_vnkx2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnkx2"]
+albedo_color = Color(0.30980393, 0.49803922, 0.58431375, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pw6i4"]
+material = SubResource("StandardMaterial3D_vnkx2")
+size = Vector3(8, 3, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ufbh"]
+albedo_color = Color(0.9098039, 0.89411765, 0.84705883, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7tlj"]
+material = SubResource("StandardMaterial3D_5ufbh")
+size = Vector3(8.8, 0.35, 7.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5qyb"]
+albedo_color = Color(0.9490196, 0.9490196, 0.9254902, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_24akq"]
+material = SubResource("StandardMaterial3D_u5qyb")
+size = Vector3(8.3, 0.25, 0.18)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvi03"]
+albedo_color = Color(0.92941177, 0.9098039, 0.85490197, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ouwh"]
+material = SubResource("StandardMaterial3D_yvi03")
+size = Vector3(1.1, 2.1, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey51r"]
+albedo_color = Color(0.12156863, 0.16862746, 0.1882353, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yp055"]
+material = SubResource("StandardMaterial3D_ey51r")
+size = Vector3(1.5, 1.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgsw8"]
+albedo_color = Color(0.12156863, 0.16862746, 0.1882353, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kii73"]
+material = SubResource("StandardMaterial3D_fgsw8")
+size = Vector3(1.5, 1.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q041e"]
+albedo_color = Color(0.8117647, 0.8117647, 0.8117647, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u7llh"]
+material = SubResource("StandardMaterial3D_q041e")
+size = Vector3(2.2, 0.25, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pmfma"]
+size = Vector3(10, 3, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vnkx2"]
+size = Vector3(3, 3, 2)
+
+[node name="PropertyHouse1" type="Node3D" unique_id=1269749178]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+script = ExtResource("1_vnkx2")
+house_visual_type = "simple"
+
+[node name="HouseMesh" type="MeshInstance3D" parent="." unique_id=837326612]
+
+[node name="SimpleHouse" type="Node3D" parent="HouseMesh" unique_id=1720212740]
+
+[node name="Body" type="MeshInstance3D" parent="HouseMesh/SimpleHouse" unique_id=647438449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_pw6i4")
+
+[node name="Roof" type="MeshInstance3D" parent="HouseMesh/SimpleHouse" unique_id=119611898]
+transform = Transform3D(0.99254614, 0.12186935, 0, -0.12186935, 0.99254614, 0, 0, 0, 1, 0, 3.25, 0)
+mesh = SubResource("BoxMesh_e7tlj")
+
+[node name="FrontWhiteFrame" type="MeshInstance3D" parent="HouseMesh/SimpleHouse" unique_id=28079262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05, -3.61)
+mesh = SubResource("BoxMesh_24akq")
+
+[node name="Door" type="MeshInstance3D" parent="HouseMesh/SimpleHouse" unique_id=356351654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, -3.56)
+mesh = SubResource("BoxMesh_2ouwh")
+
+[node name="WindowLeft" type="MeshInstance3D" parent="HouseMesh/SimpleHouse" unique_id=12900684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.7, -3.57)
+mesh = SubResource("BoxMesh_yp055")
+
+[node name="WindowRight" type="MeshInstance3D" parent="HouseMesh/SimpleHouse" unique_id=65064265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.7, -3.57)
+mesh = SubResource("BoxMesh_kii73")
+
+[node name="Steps" type="MeshInstance3D" parent="HouseMesh/SimpleHouse" unique_id=380877873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -4.1)
+mesh = SubResource("BoxMesh_u7llh")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1332599252]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1216430814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_pmfma")
+
+[node name="EntryArea" type="Area3D" parent="." unique_id=533003520]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EntryArea" unique_id=1934949039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4)
+shape = SubResource("BoxShape3D_vnkx2")
