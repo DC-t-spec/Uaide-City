@@ -1,41 +1,56 @@
 [gd_scene format=3 uid="uid://c17rguvsqx51v"]
 [ext_resource type="Script" uid="uid://d2cuk1klri7q" path="res://properties/property_house.gd" id="1_vnkx2"]
 [sub_resource type="StandardMaterial3D" id="mat_white"]
-albedo_color = Color(0.91,0.91,0.9,1)
+albedo_color = Color(0.93,0.93,0.92,1)
 [sub_resource type="StandardMaterial3D" id="mat_dark"]
 albedo_color = Color(0.14,0.16,0.19,1)
-[sub_resource type="StandardMaterial3D" id="mat_gray"]
-albedo_color = Color(0.50,0.53,0.56,1)
+[sub_resource type="StandardMaterial3D" id="mat_cement"]
+albedo_color = Color(0.52,0.54,0.57,1)
 [sub_resource type="StandardMaterial3D" id="mat_wood"]
-albedo_color = Color(0.31,0.23,0.17,1)
+albedo_color = Color(0.28,0.2,0.14,1)
+[sub_resource type="StandardMaterial3D" id="mat_stone"]
+albedo_color = Color(0.4,0.41,0.43,1)
 [sub_resource type="StandardMaterial3D" id="mat_glass"]
-albedo_color = Color(0.45,0.66,0.8,0.78)
+albedo_color = Color(0.29,0.46,0.65,0.8)
 transparency = 1
-roughness = 0.05
+roughness = 0.04
+metallic = 0.22
+emission_enabled = true
+emission = Color(0.05,0.09,0.14,1)
+emission_energy_multiplier = 0.35
 [sub_resource type="BoxMesh" id="base"]
 material = SubResource("mat_white")
 size = Vector3(8.8,3.0,6.9)
 [sub_resource type="BoxMesh" id="upper"]
 material = SubResource("mat_dark")
-size = Vector3(5.4,2.2,4.2)
-[sub_resource type="BoxMesh" id="left_frame"]
-material = SubResource("mat_gray")
-size = Vector3(2.4,3.2,4.6)
+size = Vector3(5.8,2.35,4.5)
+[sub_resource type="BoxMesh" id="floating"]
+material = SubResource("mat_cement")
+size = Vector3(3.1,1.6,3.4)
 [sub_resource type="BoxMesh" id="canopy"]
+material = SubResource("mat_stone")
+size = Vector3(4.6,0.28,2.3)
+[sub_resource type="BoxMesh" id="frame"]
 material = SubResource("mat_dark")
-size = Vector3(4.0,0.2,2.1)
-[sub_resource type="BoxMesh" id="wood_panel"]
-material = SubResource("mat_wood")
-size = Vector3(2.0,2.6,0.3)
+size = Vector3(3.8,1.95,0.22)
 [sub_resource type="BoxMesh" id="glass_wide"]
 material = SubResource("mat_glass")
-size = Vector3(3.2,1.6,0.08)
+size = Vector3(3.4,1.6,0.08)
 [sub_resource type="BoxMesh" id="glass_tall"]
 material = SubResource("mat_glass")
-size = Vector3(1.2,2.2,0.08)
+size = Vector3(1.3,2.3,0.08)
+[sub_resource type="BoxMesh" id="door_frame"]
+material = SubResource("mat_white")
+size = Vector3(1.3,2.4,0.2)
 [sub_resource type="BoxMesh" id="door"]
-material = SubResource("mat_dark")
-size = Vector3(1.1,2.2,0.1)
+material = SubResource("mat_wood")
+size = Vector3(1.0,2.2,0.08)
+[sub_resource type="BoxMesh" id="step1"]
+material = SubResource("mat_stone")
+size = Vector3(3.8,0.16,1.4)
+[sub_resource type="BoxMesh" id="step2"]
+material = SubResource("mat_cement")
+size = Vector3(3.0,0.16,1.0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pmfma"]
 size = Vector3(10,3,10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vnkx2"]
@@ -50,29 +65,38 @@ house_visual_type = "modern"
 transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.5,0)
 mesh = SubResource("base")
 [node name="Upper" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,1.5,4.0,-0.9)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,1.6,4.1,-0.8)
 mesh = SubResource("upper")
-[node name="LeftFrame" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,-3.2,2.1,0.8)
-mesh = SubResource("left_frame")
+[node name="FloatingVolume" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,-2.7,3.15,1.6)
+mesh = SubResource("floating")
 [node name="Canopy" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,0.8,2.5,-3.75)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0.95,2.55,-3.82)
 mesh = SubResource("canopy")
-[node name="WoodPanel" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,2.8,1.6,-3.42)
-mesh = SubResource("wood_panel")
+[node name="FrontFrame" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,1.9,1.95,-3.42)
+mesh = SubResource("frame")
 [node name="GlassFront" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,1.8,1.95,-3.43)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,1.9,1.95,-3.5)
 mesh = SubResource("glass_wide")
 [node name="GlassUpper" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,1.8,4.1,-3.05)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,1.8,4.2,-3.08)
 mesh = SubResource("glass_wide")
 [node name="GlassSide" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,-4.38,1.9,0.9)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,-4.38,1.95,0.85)
 mesh = SubResource("glass_tall")
+[node name="DoorFrame" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0.1,1.12,-3.45)
+mesh = SubResource("door_frame")
 [node name="Door" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,0.2,1.1,-3.43)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0.1,1.1,-3.53)
 mesh = SubResource("door")
+[node name="Step1" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0.2,0.08,-4.12)
+mesh = SubResource("step1")
+[node name="Step2" type="MeshInstance3D" parent="HouseMesh/ModernHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0.2,0.24,-3.78)
+mesh = SubResource("step2")
 [node name="InteractionArea" type="Area3D" parent="." unique_id=1332599252]
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1216430814]
 transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.5,0)
