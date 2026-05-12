@@ -1,0 +1,973 @@
+[gd_scene format=3 uid="uid://bkxp0x44hystt"]
+
+[ext_resource type="PackedScene" uid="uid://dkyte752bmgcf" path="res://player/player.tscn" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://ox6sf1j3f40k" path="res://world/day_night.gd" id="1_tp5tb"]
+[ext_resource type="Script" uid="uid://c7rnes4hkop6l" path="res://interactables/interactive_box.gd.gd" id="2_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://ru00dgmvt73y" path="res://interactables/work_point.tscn" id="3_4j5ol"]
+[ext_resource type="Script" uid="uid://fed1nmdoem02" path="res://ui/ui.gd" id="4_brvut"]
+[ext_resource type="Script" uid="uid://rxnc0gch44oa" path="res://interactables/work_point.gd" id="4_p1hux"]
+[ext_resource type="Script" uid="uid://cbmslfc53nrv6" path="res://ui/pause_menu.gd" id="5_0ha60"]
+[ext_resource type="PackedScene" uid="uid://bob7y1x8qgnns" path="res://world/lights/street_light.tscn" id="6_8q2wj"]
+[ext_resource type="PackedScene" uid="uid://d2k4itci7gdsb" path="res://world/urban/urban_blockout.tscn" id="7_60vd7"]
+[ext_resource type="PackedScene" uid="uid://j6g8k3flke0y" path="res://systems/navigation/RoadPoint.tscn" id="7_gk3u8"]
+[ext_resource type="Script" uid="uid://y1kwltqk2vbj" path="res://systems/navigation/RoadNetwork.gd" id="7_sgblq"]
+[ext_resource type="PackedScene" uid="uid://c43yps7tndt6h" path="res://ui/gps/GPSArrow.tscn" id="8_wc2es"]
+[ext_resource type="PackedScene" uid="uid://cm5k5jb6bm6ys" path="res://jobs/job_point.tscn" id="9_vrojb"]
+[ext_resource type="PackedScene" uid="uid://b0tcrgsdnhlno" path="res://jobs/garbage_task_point.tscn" id="10_qnd6n"]
+[ext_resource type="PackedScene" uid="uid://bl2fpy8ntkdwe" path="res://interactables/shop_point.tscn" id="11_op3e8"]
+[ext_resource type="PackedScene" uid="uid://c70segib7dnad" path="res://world/npcs/npc_basic.tscn" id="12_vid1e"]
+[ext_resource type="Script" uid="uid://52o2wmoel13e" path="res://world/buildings/bank/bank_building.gd" id="13_e63cu"]
+[ext_resource type="Script" uid="uid://w686aakpenv6" path="res://world/npcs/city_zone.gd" id="14_60vd7"]
+[ext_resource type="Script" uid="uid://b53xfsyidp2ls" path="res://world/buildings/hospital/hospital_building.gd" id="14_s8tpt"]
+[ext_resource type="Script" uid="uid://ds1qxbvnq61wo" path="res://world/buildings/bank/bank_panel.gd" id="16_s8tpt"]
+[ext_resource type="PackedScene" uid="uid://bmwswaojqdupu" path="res://ui/minimap/MiniMap.tscn" id="17_d6btn"]
+[ext_resource type="Script" uid="uid://ds0mw715s72oi" path="res://world/buildings/hospital/hospital_panel.gd" id="18_r4j7u"]
+[ext_resource type="Script" uid="uid://b5w05nm2qwe1p" path="res://ui/reputation_label.gd" id="19_h1iki"]
+[ext_resource type="PackedScene" uid="uid://b8t5aafysk0as" path="res://ui/delivery_ui.tscn" id="20_nikgi"]
+[ext_resource type="Script" uid="uid://cng1apmseykxs" path="res://ui/gps/RouteRenderer3D.gd" id="25_n7uhj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wp4xf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_brvut"]
+material = SubResource("StandardMaterial3D_wp4xf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ha60"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1hux"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tp5tb"]
+sky_top_color = Color(0.2884901, 0.45740837, 0.96961766, 1)
+sky_horizon_color = Color(0.09625579, 0.22291824, 0.7191208, 1)
+ground_bottom_color = Color(0.64705884, 0.654902, 0.67058825, 1)
+
+[sub_resource type="Sky" id="Sky_8q2wj"]
+sky_material = SubResource("ProceduralSkyMaterial_tp5tb")
+
+[sub_resource type="Environment" id="Environment_tp5tb"]
+background_mode = 2
+sky = SubResource("Sky_8q2wj")
+ambient_light_color = Color(0.20392157, 0.3372549, 0.8745098, 1)
+ambient_light_energy = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ha60"]
+albedo_color = Color(0.12576583, 0.112557, 0.16864473, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4j5ol"]
+material = SubResource("StandardMaterial3D_0ha60")
+
+[sub_resource type="BoxMesh" id="BoxMesh_8q2wj"]
+size = Vector3(30, 30, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8q2wj"]
+size = Vector3(35, 25, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q2wj"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60vd7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.4)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 10
+
+[sub_resource type="Theme" id="Theme_tp5tb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e63cu"]
+bg_color = Color(0, 0, 0, 0.5019608)
+corner_detail = 12
+
+[node name="Main" type="Node3D" unique_id=1744525652]
+script = ExtResource("1_tp5tb")
+
+[node name="World" type="Node3D" parent="." unique_id=501434950]
+
+[node name="Props" type="Node3D" parent="World" unique_id=443507969]
+
+[node name="Barrier_01" type="MeshInstance3D" parent="World/Props" unique_id=2134349694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1044483, 0.5, 4)
+
+[node name="Barrier_02" type="MeshInstance3D" parent="World/Props" unique_id=1228820570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -2)
+
+[node name="Barrier_03" type="MeshInstance3D" parent="World/Props" unique_id=1356525780]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -6)
+
+[node name="InteractiveBox" type="Node3D" parent="World/Props" unique_id=2096543469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 2)
+script = ExtResource("2_v0l8b")
+
+[node name="BoxMesh" type="MeshInstance3D" parent="World/Props/InteractiveBox" unique_id=2124081332]
+mesh = SubResource("BoxMesh_brvut")
+
+[node name="Area3D" type="Area3D" parent="World/Props/InteractiveBox" unique_id=315616742]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Props/InteractiveBox/Area3D" unique_id=1054480290]
+shape = SubResource("BoxShape3D_0ha60")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Props/InteractiveBox/Area3D" unique_id=1322032145]
+shape = SubResource("BoxShape3D_p1hux")
+
+[node name="SpawnPoint" type="Node3D" parent="World/Props" unique_id=950539826 groups=["spawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.048414, 1, 4.2336674)
+
+[node name="WorkPoint" parent="World/Props" unique_id=944036425 instance=ExtResource("3_4j5ol")]
+script = ExtResource("4_p1hux")
+
+[node name="UrbanBlockout" parent="World" unique_id=1098323675 instance=ExtResource("7_60vd7")]
+
+[node name="StreetLight2" parent="World" unique_id=1420383054 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3682356, 3.5097256, 13.542215)
+
+[node name="StreetLight3" parent="World" unique_id=1151495260 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8073435, 3.5097256, 13.542215)
+
+[node name="StreetLight4" parent="World" unique_id=1582867660 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8073435, 3.5097256, 5.2787037)
+
+[node name="StreetLight5" parent="World" unique_id=1515770771 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8073435, 3.5097256, -7.171957)
+
+[node name="StreetLight24" parent="World" unique_id=1463653677 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.50896, 3.5097256, -7.171957)
+
+[node name="StreetLight25" parent="World" unique_id=252005823 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.98642, 3.5097256, -7.171957)
+
+[node name="StreetLight26" parent="World" unique_id=1525137241 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.71709, 3.5097256, -7.171957)
+
+[node name="StreetLight27" parent="World" unique_id=1990692145 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.708883, 3.5097256, -7.171957)
+
+[node name="StreetLight28" parent="World" unique_id=1855675610 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.708883, 3.5097256, 4.907589)
+
+[node name="StreetLight29" parent="World" unique_id=1563433516 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.877914, 3.5097256, 4.907589)
+
+[node name="StreetLight30" parent="World" unique_id=181498307 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.495586, 3.5097256, 4.907589)
+
+[node name="StreetLight31" parent="World" unique_id=734262492 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.38656, 3.5097256, 4.907589)
+
+[node name="StreetLight32" parent="World" unique_id=572069159 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.82393, 3.5097256, 4.907589)
+
+[node name="StreetLight33" parent="World" unique_id=2109966791 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.0695, 3.5097256, 4.907589)
+
+[node name="StreetLight34" parent="World" unique_id=1894476855 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.91728, 3.5097256, 4.907589)
+
+[node name="StreetLight35" parent="World" unique_id=416051480 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.85193, 3.5097256, 4.907589)
+
+[node name="StreetLight36" parent="World" unique_id=1775091380 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.6318, 3.5097256, 4.907589)
+
+[node name="StreetLight37" parent="World" unique_id=362394435 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.6318, 3.5097256, -9.950514)
+
+[node name="StreetLight38" parent="World" unique_id=1413552302 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.49743, 3.5097256, -9.950514)
+
+[node name="StreetLight39" parent="World" unique_id=293410979 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.23828, 3.5097256, -9.950514)
+
+[node name="StreetLight40" parent="World" unique_id=118042654 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.114426, 3.5097256, -9.950514)
+
+[node name="StreetLight41" parent="World" unique_id=1737327690 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.13476, 3.5097256, -9.950514)
+
+[node name="StreetLight42" parent="World" unique_id=1674685661 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.017975, 3.5097256, -9.950514)
+
+[node name="StreetLight43" parent="World" unique_id=439237714 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.51541, 3.5097256, -9.950514)
+
+[node name="StreetLight44" parent="World" unique_id=1712032514 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.42252, 3.5097256, -9.950514)
+
+[node name="StreetLight45" parent="World" unique_id=908524836 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.56498, 3.5097256, -9.950514)
+
+[node name="StreetLight46" parent="World" unique_id=373098517 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.318275, 3.5097256, -9.950514)
+
+[node name="StreetLight47" parent="World" unique_id=449097782 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.66007, 3.5097256, -9.950514)
+
+[node name="StreetLight48" parent="World" unique_id=376613588 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.63397, 3.5097256, -9.950514)
+
+[node name="StreetLight49" parent="World" unique_id=1082054933 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.63397, 3.5097256, 7.863409)
+
+[node name="StreetLight50" parent="World" unique_id=1162892075 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.65445, 3.5097256, 7.863409)
+
+[node name="StreetLight51" parent="World" unique_id=1899505789 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.30032, 3.5097256, 7.863409)
+
+[node name="StreetLight52" parent="World" unique_id=1431487710 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.568054, 3.5097256, 7.863409)
+
+[node name="StreetLight53" parent="World" unique_id=1287421142 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.568054, 3.5097256, 7.863409)
+
+[node name="StreetLight54" parent="World" unique_id=507493581 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.5015, 3.5097256, 7.863409)
+
+[node name="StreetLight55" parent="World" unique_id=1238541294 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.34386, 3.5097256, 7.863409)
+
+[node name="StreetLight56" parent="World" unique_id=463498687 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.34386, 3.5097256, 7.863409)
+
+[node name="StreetLight6" parent="World" unique_id=557304382 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8736954, 3.5097256, -15.171957)
+
+[node name="StreetLight7" parent="World" unique_id=1944764027 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8736954, 3.5097256, -32.60836)
+
+[node name="StreetLight8" parent="World" unique_id=763650952 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8736954, 3.5097256, -53.578827)
+
+[node name="StreetLight9" parent="World" unique_id=631491872 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8736954, 3.5097256, -75.97359)
+
+[node name="StreetLight10" parent="World" unique_id=2057217322 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.722054, 3.5097256, -42.03299)
+
+[node name="StreetLight11" parent="World" unique_id=1249438049 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.722054, 3.5097256, -25.273281)
+
+[node name="StreetLight12" parent="World" unique_id=2049703032 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.722054, 3.5097256, -13.74388)
+
+[node name="StreetLight13" parent="World" unique_id=938042675 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.722054, 3.5097256, -60.46839)
+
+[node name="StreetLight14" parent="World" unique_id=1549080415 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.108723, 3.5097256, -60.46839)
+
+[node name="StreetLight15" parent="World" unique_id=2013125198 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.108723, 3.5097256, -43.619724)
+
+[node name="StreetLight16" parent="World" unique_id=204440480 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.108723, 3.5097256, -27.674683)
+
+[node name="StreetLight17" parent="World" unique_id=1779568697 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.108723, 3.5097256, -12.860754)
+
+[node name="StreetLight18" parent="World" unique_id=1350343822 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.108723, 3.5097256, 1.1367874)
+
+[node name="StreetLight19" parent="World" unique_id=844154993 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.205956, 3.5097256, 1.1367874)
+
+[node name="StreetLight20" parent="World" unique_id=1031556762 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.583958, 3.5097256, 1.1367874)
+
+[node name="StreetLight21" parent="World" unique_id=1057768627 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.129555, 3.5097256, 1.1367874)
+visible = false
+
+[node name="StreetLight22" parent="World" unique_id=1724797909 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.80757, 3.5097256, 1.1367874)
+
+[node name="StreetLight23" parent="World" unique_id=357760908 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.988754, 3.5097256, 1.1367874)
+
+[node name="StreetLight" parent="World" unique_id=1709547389 instance=ExtResource("6_8q2wj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3682356, 3.5097256, 4.32069)
+
+[node name="RoadNetwork" type="Node3D" parent="World" unique_id=996837275]
+script = ExtResource("7_sgblq")
+
+[node name="RoadPoint_001" parent="World/RoadNetwork" unique_id=1722168669 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.575327, 0, 0.034137726)
+visible = false
+point_id = "RoadPoint_001"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_005")])
+
+[node name="RoadPoint_002" parent="World/RoadNetwork" unique_id=1826731241 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.465582, 0, 0)
+visible = false
+point_id = "RoadPoint_002"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_005")])
+
+[node name="RoadPoint_003" parent="World/RoadNetwork" unique_id=1467499050 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.559708, 0, 0.5022497)
+visible = false
+point_id = "RoadPoint_003"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_005")])
+
+[node name="RoadPoint_004" parent="World/RoadNetwork" unique_id=13130249 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.237183, 0, -75.1219)
+visible = false
+point_id = "RoadPoint_004"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_005")])
+
+[node name="RoadPoint_005" parent="World/RoadNetwork" unique_id=426134237 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.404007, 0, -74.595276)
+visible = false
+point_id = "RoadPoint_005"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004")])
+
+[node name="RoadPoint_006" parent="World/RoadNetwork" unique_id=920054461 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.404007, 0, -142.90407)
+visible = false
+point_id = "RoadPoint_006"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_007")])
+
+[node name="RoadPoint_007" parent="World/RoadNetwork" unique_id=627889942 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.559998, 0, -143.51433)
+visible = false
+point_id = "RoadPoint_007"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_006")])
+
+[node name="RoadPoint_008" parent="World/RoadNetwork" unique_id=699562893 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39053345, 0, -137.44507)
+visible = false
+point_id = "RoadPoint_008"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_006"), NodePath("../RoadPoint_007")])
+
+[node name="RoadPoint_012" parent="World/RoadNetwork" unique_id=681253165 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39053345, 0, -47.270737)
+visible = false
+point_id = "RoadPoint_012"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_006"), NodePath("../RoadPoint_007"), NodePath("../RoadPoint_008"), NodePath("../RoadPoint_010"), NodePath("../RoadPoint_010/RoadPoint_009"), NodePath("../RoadPoint_011")])
+
+[node name="RoadPoint_010" parent="World/RoadNetwork" unique_id=735404385 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39053345, 0, -39.91536)
+visible = false
+point_id = "RoadPoint_010"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_006"), NodePath("../RoadPoint_007"), NodePath("../RoadPoint_008"), NodePath("RoadPoint_009")])
+
+[node name="RoadPoint_009" parent="World/RoadNetwork/RoadPoint_010" unique_id=1813513356 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -36.849854)
+visible = false
+point_id = "RoadPoint_009"
+connected_points = Array[NodePath]([NodePath("../../RoadPoint_001"), NodePath("../../RoadPoint_002"), NodePath("../../RoadPoint_003"), NodePath("../../RoadPoint_004"), NodePath("../../RoadPoint_006"), NodePath("../../RoadPoint_007"), NodePath("../../RoadPoint_008")])
+
+[node name="RoadPoint_011" parent="World/RoadNetwork" unique_id=1239172855 instance=ExtResource("7_gk3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39053345, 0, -11.7817135)
+visible = false
+point_id = "RoadPoint_011"
+connected_points = Array[NodePath]([NodePath("../RoadPoint_001"), NodePath("../RoadPoint_002"), NodePath("../RoadPoint_003"), NodePath("../RoadPoint_004"), NodePath("../RoadPoint_006"), NodePath("../RoadPoint_007"), NodePath("../RoadPoint_008"), NodePath("../RoadPoint_010/RoadPoint_009"), NodePath("../RoadPoint_010")])
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=88299238]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+shadow_enabled = true
+shadow_bias = 0.08
+directional_shadow_max_distance = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1150052957]
+environment = SubResource("Environment_tp5tb")
+
+[node name="Player" parent="." unique_id=819609279 instance=ExtResource("1_itxqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.58131385, 12)
+
+[node name="GPSArrow" parent="Player" unique_id=1156328774 instance=ExtResource("8_wc2es")]
+
+[node name="JobPoint" parent="." unique_id=1564017015 instance=ExtResource("9_vrojb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.268318, 0, 9.869557)
+
+[node name="Plaza" type="MeshInstance3D" parent="." unique_id=1232419485]
+transform = Transform3D(4, 0, 0, 0, 0.05, 0, 0, 0, 4, 0, 0.08, 0)
+mesh = SubResource("CylinderMesh_4j5ol")
+
+[node name="GarbageTaskPoint1" parent="." unique_id=1780784694 instance=ExtResource("10_qnd6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.465715, 0, 14.880291)
+
+[node name="GarbageTaskPoint2" parent="." unique_id=86870562 instance=ExtResource("10_qnd6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.465715, 0, 22.047235)
+task_id = "garbage_002"
+
+[node name="GarbageTaskPoint3" parent="." unique_id=1572689301 instance=ExtResource("10_qnd6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2113495, 0, 14.880291)
+task_id = "garbage_003"
+
+[node name="Shop_Food" parent="." unique_id=39969202 instance=ExtResource("11_op3e8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.98536, 0, 6.4540443)
+
+[node name="Shop_Meal" parent="." unique_id=51640438 instance=ExtResource("11_op3e8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.179108, 0, 32.42462)
+item_id = "food_meal"
+
+[node name="Shop_Drink" parent="." unique_id=1954804430 instance=ExtResource("11_op3e8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.862, 0, 32.425)
+item_id = "drink_basic"
+
+[node name="Shop_Transport" parent="." unique_id=840761632 instance=ExtResource("11_op3e8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09856033, 0, 32.42462)
+item_id = "transport_basic"
+
+[node name="City" type="Node3D" parent="." unique_id=1904908987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.036613, 0, 71.48782)
+
+[node name="Zona_Residencial" type="Node3D" parent="City" unique_id=971740547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.38475, 0, -118.01222)
+script = ExtResource("14_60vd7")
+zone_name = "Residencial"
+npc_scene = ExtResource("12_vid1e")
+
+[node name="SpawnPoint_01" type="Marker3D" parent="City/Zona_Residencial" unique_id=592145318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30.377478)
+
+[node name="SpawnPoint_02" type="Marker3D" parent="City/Zona_Residencial" unique_id=1025540768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.420937)
+
+[node name="SpawnPoint_03" type="Marker3D" parent="City/Zona_Residencial" unique_id=823931870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.643837, 0, 13.473591)
+
+[node name="Zona_Comercial" type="Node3D" parent="City" unique_id=2054379489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6656647, 0, -103.32004)
+script = ExtResource("14_60vd7")
+zone_name = "Comercial"
+npc_scene = ExtResource("12_vid1e")
+
+[node name="SpawnPoint_01" type="Marker3D" parent="City/Zona_Comercial" unique_id=1253166910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4404755, 0, 0)
+
+[node name="SpawnPoint_02" type="Marker3D" parent="City/Zona_Comercial" unique_id=648412360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.53685, 0, 0)
+
+[node name="SpawnPoint_03" type="Marker3D" parent="City/Zona_Comercial" unique_id=735538744]
+
+[node name="SpawnPoint_04" type="Marker3D" parent="City/Zona_Comercial" unique_id=1002145047]
+
+[node name="Zona_Centro" type="Node3D" parent="City" unique_id=197452288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.72246, 0, 6.2538567)
+script = ExtResource("14_60vd7")
+zone_name = "Centro"
+npc_scene = ExtResource("12_vid1e")
+
+[node name="SpawnPoint_01" type="Marker3D" parent="City/Zona_Centro" unique_id=1718406278]
+
+[node name="SpawnPoint_02" type="Marker3D" parent="City/Zona_Centro" unique_id=476235302]
+
+[node name="SpawnPoint_03" type="Marker3D" parent="City/Zona_Centro" unique_id=218098297]
+
+[node name="SpawnPoint_04" type="Marker3D" parent="City/Zona_Centro" unique_id=1021690870]
+
+[node name="SpawnPoint_05" type="Marker3D" parent="City/Zona_Centro" unique_id=2049359789]
+
+[node name="BankBuilding" type="Node3D" parent="." unique_id=194372562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.30712, 0, -11.298996)
+script = ExtResource("13_e63cu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BankBuilding" unique_id=1559583446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.824316, 0, -5.7842407)
+mesh = SubResource("BoxMesh_8q2wj")
+
+[node name="BankArea" type="Area3D" parent="BankBuilding" unique_id=1595775853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.631777, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BankBuilding/BankArea" unique_id=617540895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6737747, 0, -5.7836285)
+shape = SubResource("BoxShape3D_8q2wj")
+
+[node name="HospitalBuilding" type="Node3D" parent="." unique_id=92740936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.00754, 0, 28.675673)
+script = ExtResource("14_s8tpt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HospitalBuilding" unique_id=1390331881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.824316, 0, -5.7842407)
+mesh = SubResource("BoxMesh_8q2wj")
+
+[node name="HospitalArea" type="Area3D" parent="HospitalBuilding" unique_id=387899273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.631777, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HospitalBuilding/HospitalArea" unique_id=685827552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6737747, 0, -5.7836285)
+shape = SubResource("BoxShape3D_8q2wj")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=234936589]
+script = ExtResource("4_brvut")
+
+[node name="PauseMenu" type="Control" parent="UI" unique_id=1187793647]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_0ha60")
+
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu" unique_id=70047688]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(6.256998e-07, 0, 0.3427, 0.003921569)
+
+[node name="ResumeButton" type="Button" parent="UI/PauseMenu" unique_id=1721724796]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -15.5
+offset_right = 43.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continuar"
+
+[node name="PropertyPanel" type="Panel" parent="UI" unique_id=464504189 groups=["ui"]]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -817.0
+offset_top = 51.999996
+offset_right = -437.0
+offset_bottom = 272.0
+grow_horizontal = 0
+scale = Vector2(1.0256932, 0.88813794)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PropertyPanel" unique_id=1904556085]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="PropertyTitleLabel" type="Label" parent="UI/PropertyPanel/VBoxContainer" unique_id=207360305]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="PropertyStatusLabel" type="Label" parent="UI/PropertyPanel/VBoxContainer" unique_id=740970858]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="PropertyPriceLabel" type="Label" parent="UI/PropertyPanel/VBoxContainer" unique_id=343702964]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="PropertyRentLabel" type="Label" parent="UI/PropertyPanel/VBoxContainer" unique_id=1132375712]
+layout_mode = 2
+
+[node name="PropertyOwnerLabel" type="Label" parent="UI/PropertyPanel/VBoxContainer" unique_id=1592473227]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="PropertyActionLabel" type="Label" parent="UI/PropertyPanel/VBoxContainer" unique_id=300035839]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="JobPanel" type="Panel" parent="UI" unique_id=1157057206 groups=["ui"]]
+visible = false
+offset_left = 462.0
+offset_top = 34.0
+offset_right = 792.0
+offset_bottom = 194.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/JobPanel" unique_id=759331355]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="JobTitleLabel" type="Label" parent="UI/JobPanel/VBoxContainer" unique_id=1979184259]
+layout_mode = 2
+text = "Emprego
+"
+
+[node name="JobStatusLabel" type="Label" parent="UI/JobPanel/VBoxContainer" unique_id=996528959]
+layout_mode = 2
+text = "Estado:"
+
+[node name="JobProgressLabel" type="Label" parent="UI/JobPanel/VBoxContainer" unique_id=1769910329]
+layout_mode = 2
+text = "Progresso:"
+
+[node name="JobRewardLabel" type="Label" parent="UI/JobPanel/VBoxContainer" unique_id=301475324]
+layout_mode = 2
+text = "Pagamento:"
+
+[node name="JobActionLabel" type="Label" parent="UI/JobPanel/VBoxContainer" unique_id=152698015]
+layout_mode = 2
+text = "Ação:
+"
+
+[node name="FinancePanel" type="Panel" parent="UI" unique_id=394569665]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 89.0
+offset_right = -5.0
+offset_bottom = 334.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/FinancePanel" unique_id=771801070]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 386.0
+offset_bottom = 266.0
+
+[node name="FinanceTitleLabel" type="Label" parent="UI/FinancePanel/VBoxContainer" unique_id=1233435746]
+layout_mode = 2
+text = "FINANÇAS"
+horizontal_alignment = 1
+
+[node name="BankLabel" type="Label" parent="UI/FinancePanel/VBoxContainer" unique_id=1283711157]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="UI/FinancePanel/VBoxContainer" unique_id=981029139]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="PendingLabel" type="Label" parent="UI/FinancePanel/VBoxContainer" unique_id=2028816566]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="TransactionsLabel" type="Label" parent="UI/FinancePanel/VBoxContainer" unique_id=173165855]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="FinanceMessageLabel" type="Label" parent="UI/FinancePanel/VBoxContainer" unique_id=185774594]
+layout_mode = 2
+
+[node name="PayBillButton" type="Button" parent="UI/FinancePanel/VBoxContainer" unique_id=868027307]
+layout_mode = 2
+text = "Pagar primeira conta"
+
+[node name="BuildMenuPanel" type="Panel" parent="UI" unique_id=27462926]
+offset_left = 17.0
+offset_top = 224.0
+offset_right = 57.0
+offset_bottom = 264.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/BuildMenuPanel" unique_id=1705486932]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="UI/BuildMenuPanel/VBoxContainer" unique_id=1980104166]
+layout_mode = 2
+
+[node name="BtnSimple" type="Button" parent="UI/BuildMenuPanel/VBoxContainer" unique_id=495178855]
+layout_mode = 2
+
+[node name="BtnFamily" type="Button" parent="UI/BuildMenuPanel/VBoxContainer" unique_id=69985996]
+layout_mode = 2
+
+[node name="BtnModern" type="Button" parent="UI/BuildMenuPanel/VBoxContainer" unique_id=997728734]
+layout_mode = 2
+
+[node name="BtnLuxury" type="Button" parent="UI/BuildMenuPanel/VBoxContainer" unique_id=1155041845]
+layout_mode = 2
+
+[node name="LeftHUD" type="Panel" parent="UI" unique_id=1563336599]
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 358.0
+offset_bottom = 207.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8q2wj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LeftHUD" unique_id=1036683593]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 294.0
+offset_bottom = 189.0
+
+[node name="MoneyLabel" type="Label" parent="UI/LeftHUD/VBoxContainer" unique_id=765205972]
+layout_mode = 2
+text = "Dinheiro: "
+
+[node name="HungerLabel" type="Label" parent="UI/LeftHUD/VBoxContainer" unique_id=1211186602]
+layout_mode = 2
+text = "Fome: 100%
+"
+
+[node name="EnergyLabel" type="Label" parent="UI/LeftHUD/VBoxContainer" unique_id=1032457523]
+layout_mode = 2
+text = "Energia: 100%"
+
+[node name="MissionTitleLabel" type="Label" parent="UI/LeftHUD/VBoxContainer" unique_id=1006947716]
+layout_mode = 2
+text = "MISSÃO ATUAL
+"
+
+[node name="MissionLabel" type="Label" parent="UI/LeftHUD/VBoxContainer" unique_id=1393457469]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 2
+
+[node name="MiniMap" parent="UI/LeftHUD" unique_id=2014195123 instance=ExtResource("17_d6btn")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 202.0
+offset_right = 231.0
+offset_bottom = 412.0
+
+[node name="TopHUD" type="Panel" parent="UI" unique_id=511579426]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 15.0
+offset_right = -40.0
+offset_bottom = 85.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_60vd7")
+
+[node name="TimeLabel" type="Label" parent="UI/TopHUD" unique_id=986520569]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 24.0
+offset_right = 53.0
+offset_bottom = 47.0
+
+[node name="BottomMenu" type="Panel" parent="UI" unique_id=1392134977]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = 259.0
+offset_right = -224.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/BottomMenu" unique_id=111086301]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = -12.0
+offset_top = -2.0
+offset_right = 534.0
+offset_bottom = 48.0
+theme = SubResource("Theme_tp5tb")
+theme_override_constants/separation = 4
+
+[node name="BtnInventory" type="Button" parent="UI/BottomMenu/HBoxContainer" unique_id=131018066]
+layout_mode = 2
+text = "Inventário
+"
+
+[node name="BtnProperties" type="Button" parent="UI/BottomMenu/HBoxContainer" unique_id=815735544]
+layout_mode = 2
+text = "Propriedades"
+
+[node name="BtnVehicles" type="Button" parent="UI/BottomMenu/HBoxContainer" unique_id=1715009913]
+layout_mode = 2
+text = "Veículos"
+
+[node name="BtnJobs" type="Button" parent="UI/BottomMenu/HBoxContainer" unique_id=501763391]
+layout_mode = 2
+text = "Trabalho"
+
+[node name="BtnMissions" type="Button" parent="UI/BottomMenu/HBoxContainer" unique_id=2146614154]
+layout_mode = 2
+text = "Missões"
+
+[node name="BtnShop" type="Button" parent="UI/BottomMenu/HBoxContainer" unique_id=1594404323]
+layout_mode = 2
+text = "Loja"
+
+[node name="BtnSettings" type="Button" parent="UI/BottomMenu/HBoxContainer" unique_id=319375038]
+layout_mode = 2
+text = "Config."
+
+[node name="PhoneMenu" type="Panel" parent="UI" unique_id=1979257534]
+offset_left = 971.0
+offset_top = 265.0
+offset_right = 1087.0
+offset_bottom = 305.0
+scale = Vector2(1.16, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_e63cu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PhoneMenu" unique_id=1367088587]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 375.0
+
+[node name="PhoneTitleLabel" type="Label" parent="UI/PhoneMenu/VBoxContainer" unique_id=1336431432]
+layout_mode = 2
+text = "UAIDE PHONE"
+
+[node name="BtnPhoneMessages" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=165226486]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Mensagens"
+
+[node name="BtnPhoneContacts" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=1273314362]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Contactos"
+
+[node name="BtnPhoneMap" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=2015235839]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Mapa"
+
+[node name="BtnPhoneJobs" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=791079556]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Empregos"
+
+[node name="BtnPhoneProperties" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=1290817005]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Propriedades"
+
+[node name="BtnPhoneBank" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=1489390229]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Banco"
+
+[node name="BtnPhoneShop" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=108474601]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Loja"
+
+[node name="BtnPhoneSettings" type="Button" parent="UI/PhoneMenu/VBoxContainer" unique_id=379090532]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/line_spacing = 8
+text = "Config."
+
+[node name="BankPanel" type="Control" parent="UI" unique_id=558847387]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.0
+offset_top = 278.0
+offset_right = -219.0
+offset_bottom = 318.0
+grow_horizontal = 2
+script = ExtResource("16_s8tpt")
+
+[node name="Panel" type="Panel" parent="UI/BankPanel" unique_id=147484597]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/BankPanel/Panel" unique_id=1665865044]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="UI/BankPanel/Panel/VBoxContainer" unique_id=1591162979]
+layout_mode = 2
+
+[node name="CashLabel" type="Label" parent="UI/BankPanel/Panel/VBoxContainer" unique_id=1599175764]
+layout_mode = 2
+
+[node name="BankLabel" type="Label" parent="UI/BankPanel/Panel/VBoxContainer" unique_id=1658576612]
+layout_mode = 2
+
+[node name="AmountInput" type="LineEdit" parent="UI/BankPanel/Panel/VBoxContainer" unique_id=2120842458]
+layout_mode = 2
+
+[node name="DepositButton" type="Button" parent="UI/BankPanel/Panel/VBoxContainer" unique_id=666272474]
+layout_mode = 2
+
+[node name="WithdrawButton" type="Button" parent="UI/BankPanel/Panel/VBoxContainer" unique_id=1458842603]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="UI/BankPanel/Panel/VBoxContainer" unique_id=38663960]
+layout_mode = 2
+
+[node name="HospitalPanel" type="Control" parent="UI" unique_id=1494242053]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 420.0
+offset_top = 292.0
+offset_right = 460.0
+offset_bottom = 332.0
+script = ExtResource("18_r4j7u")
+
+[node name="Panel" type="Panel" parent="UI/HospitalPanel" unique_id=1612621748]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HospitalPanel/Panel" unique_id=309225196]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="UI/HospitalPanel/Panel/VBoxContainer" unique_id=1512902769]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="UI/HospitalPanel/Panel/VBoxContainer" unique_id=395287256]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="UI/HospitalPanel/Panel/VBoxContainer" unique_id=461602786]
+layout_mode = 2
+
+[node name="TreatButton" type="Button" parent="UI/HospitalPanel/Panel/VBoxContainer" unique_id=1019848291]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="UI/HospitalPanel/Panel/VBoxContainer" unique_id=1503291498]
+layout_mode = 2
+
+[node name="ReputationLabel" type="Label" parent="UI" unique_id=483258619]
+offset_left = 141.0
+offset_top = 33.0
+offset_right = 314.0
+offset_bottom = 56.0
+text = "Rep: 0 | Desconhecido"
+script = ExtResource("19_h1iki")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1433123113]
+
+[node name="DeliveryUI" parent="CanvasLayer" unique_id=1637616500 instance=ExtResource("20_nikgi")]
+offset_left = 274.0
+offset_top = -288.0
+offset_right = 274.0
+offset_bottom = -288.0
+
+[node name="RouteRenderer3D" type="Node3D" parent="." unique_id=334751731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.05085, 0)
+script = ExtResource("25_n7uhj")
+
+[connection signal="body_entered" from="World/Props/InteractiveBox/Area3D" to="World/Props/InteractiveBox" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="World/Props/InteractiveBox/Area3D" to="World/Props/InteractiveBox" method="_on_area_3d_body_exited"]
+[connection signal="pressed" from="UI/PauseMenu/ResumeButton" to="UI/PauseMenu" method="_on_resume_button_pressed"]

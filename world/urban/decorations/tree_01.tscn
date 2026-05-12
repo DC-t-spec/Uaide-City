@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dblobogh125ol"]
+
+[ext_resource type="Script" uid="uid://bvuxj7rc0x1oi" path="res://world/urban/tree_01.gd" id="1_1uv36"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82x0j"]
+albedo_color = Color(0.41960785, 0.30980393, 0.16862746, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_twckg"]
+material = SubResource("StandardMaterial3D_82x0j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3hpl"]
+albedo_color = Color(0.18039216, 0.8, 0.44313726, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qhb5s"]
+material = SubResource("StandardMaterial3D_a3hpl")
+
+[node name="Tree_01" type="Node3D" unique_id=282423292]
+script = ExtResource("1_1uv36")
+
+[node name="Trunk" type="MeshInstance3D" parent="." unique_id=515411134]
+transform = Transform3D(0.25, 0, 0, 0, 1.2, 0, 0, 0, 0.25, 1.4658585, 1.2, -2.6225195)
+mesh = SubResource("CylinderMesh_twckg")
+
+[node name="Leaves" type="MeshInstance3D" parent="." unique_id=1546197930]
+transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, 1.5478592, 3, -2.5275183)
+mesh = SubResource("SphereMesh_qhb5s")

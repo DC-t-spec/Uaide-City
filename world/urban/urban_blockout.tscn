@@ -1,0 +1,1084 @@
+[gd_scene format=3 uid="uid://d2k4itci7gdsb"]
+
+[ext_resource type="Script" uid="uid://bu1aqe5tee5k" path="res://world/urban/urban_grid.gd" id="1_1xnww"]
+[ext_resource type="Script" uid="uid://0ruk6ewahp8e" path="res://properties/property_lot.gd" id="2_e548m"]
+[ext_resource type="PackedScene" uid="uid://c17rguvsqx51v" path="res://properties/property_house_1.tscn" id="3_43kdj"]
+[ext_resource type="Script" uid="uid://bnoxdeiy5rcp" path="res://world/urban/delivery_hub.gd" id="4_kxjuj"]
+[ext_resource type="PackedScene" uid="uid://bob7y1x8qgnns" path="res://world/lights/street_light.tscn" id="4_y3jag"]
+[ext_resource type="PackedScene" uid="uid://dblobogh125ol" path="res://world/urban/decorations/tree_01.tscn" id="7_1yme3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8yspe"]
+albedo_color = Color(0.5411765, 0.4509804, 0.33333334, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e548m"]
+material = SubResource("StandardMaterial3D_8yspe")
+size = Vector2(300, 300)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xnww"]
+albedo_color = Color(0.3529412, 0.2784314, 0.1882353, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_e548m"]
+data = PackedVector3Array(150, 0, 150, -150, 0, 150, 150, 0, -150, -150, 0, 150, -150, 0, -150, 150, 0, -150)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43kdj"]
+albedo_color = Color(0.17254902, 0.17254902, 0.18039216, 1)
+metallic_specular = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_y3jag"]
+material = SubResource("StandardMaterial3D_43kdj")
+size = Vector3(12, 0.05, 300)
+
+[sub_resource type="BoxMesh" id="BoxMesh_chq8d"]
+size = Vector3(0.15, 0.05, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxjuj"]
+albedo_color = Color(0.23137255, 0.3529412, 0.16470589, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2mdg4"]
+material = SubResource("StandardMaterial3D_kxjuj")
+size = Vector3(60, 0.02, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82etk"]
+albedo_color = Color(0.8509804, 1, 0.8392157, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1yme3"]
+material = SubResource("StandardMaterial3D_82etk")
+size = Vector3(16, 0.02, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6o8p"]
+size = Vector3(16, 2, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6o8p"]
+albedo_color = Color(0.93912464, 0.9019586, 0.21910849, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8yspe"]
+material = SubResource("StandardMaterial3D_r6o8p")
+radius = 0.8
+height = 1.6
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_43kdj"]
+data = PackedVector3Array(-30, 0.01, 30, 30, 0.01, 30, -30, -0.01, 30, 30, 0.01, 30, 30, -0.01, 30, -30, -0.01, 30, 30, 0.01, -30, -30, 0.01, -30, 30, -0.01, -30, -30, 0.01, -30, -30, -0.01, -30, 30, -0.01, -30, 30, 0.01, 30, 30, 0.01, -30, 30, -0.01, 30, 30, 0.01, -30, 30, -0.01, -30, 30, -0.01, 30, -30, 0.01, -30, -30, 0.01, 30, -30, -0.01, -30, -30, 0.01, 30, -30, -0.01, 30, -30, -0.01, -30, 30, 0.01, 30, -30, 0.01, 30, 30, 0.01, -30, -30, 0.01, 30, -30, 0.01, -30, 30, 0.01, -30, -30, -0.01, 30, 30, -0.01, 30, -30, -0.01, -30, 30, -0.01, 30, 30, -0.01, -30, -30, -0.01, -30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mdg4"]
+albedo_color = Color(0.22745098, 0.22745098, 0.23529412, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_82etk"]
+material = SubResource("StandardMaterial3D_2mdg4")
+size = Vector3(61, 0.2, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3jag"]
+albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kxjuj"]
+material = SubResource("StandardMaterial3D_y3jag")
+size = Vector3(2, 0.1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chq8d"]
+albedo_color = Color(0.66348356, 0.74593806, 0.6976554, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_82x0j"]
+material = SubResource("StandardMaterial3D_chq8d")
+size = Vector3(60, 0.08, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yme3"]
+albedo_color = Color(0.33022344, 0.4677996, 0.86410797, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r6o8p"]
+material = SubResource("StandardMaterial3D_1yme3")
+size = Vector3(4, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8yspe"]
+size = Vector3(3, 2, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2mdg4"]
+size = Vector3(5, 2, 5)
+
+[node name="UrbanBlockout" type="Node3D" unique_id=1098323675]
+
+[node name="CityGround" type="MeshInstance3D" parent="." unique_id=670153642]
+transform = Transform3D(120, 0, 0, 0, 1, 0, 0, 0, 120, 0, 0.03, 0)
+mesh = SubResource("PlaneMesh_e548m")
+surface_material_override/0 = SubResource("StandardMaterial3D_1xnww")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CityGround" unique_id=579595813]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CityGround/StaticBody3D" unique_id=1662222793]
+shape = SubResource("ConcavePolygonShape3D_e548m")
+
+[node name="Roads" type="Node3D" parent="." unique_id=1268848284]
+
+[node name="Road_Main_02" type="MeshInstance3D" parent="Roads" unique_id=235331379 groups=["roads"]]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.8, 0, -2, 0, -8.742278e-08, 0, 0.04, 0)
+mesh = SubResource("BoxMesh_y3jag")
+
+[node name="Road_Main_01" type="MeshInstance3D" parent="Roads" unique_id=1330456678 groups=["roads"]]
+transform = Transform3D(2, 0, 0, 0, 0.8, 0, 0, 0, 2, 0, 0.04, 0)
+mesh = SubResource("BoxMesh_y3jag")
+
+[node name="RoadLines" type="Node3D" parent="Roads" unique_id=213207281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines" unique_id=1983881778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines19" type="Node3D" parent="Roads" unique_id=1773592343]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.4494572, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines19" unique_id=1717039819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines28" type="Node3D" parent="Roads" unique_id=1643108858]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 35, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines28" unique_id=209708432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines29" type="Node3D" parent="Roads" unique_id=832053811]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 60, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines29" unique_id=1960363468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines30" type="Node3D" parent="Roads" unique_id=79783745]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 85, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines30" unique_id=709210315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines31" type="Node3D" parent="Roads" unique_id=670942228]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 110, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines31" unique_id=1031797947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines32" type="Node3D" parent="Roads" unique_id=1779341051]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 135, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines32" unique_id=2033069671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines33" type="Node3D" parent="Roads" unique_id=743335015]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 160, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines33" unique_id=1003973322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines34" type="Node3D" parent="Roads" unique_id=865857225]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 185, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines34" unique_id=1933802112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines35" type="Node3D" parent="Roads" unique_id=846999287]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 210, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines35" unique_id=282696480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines36" type="Node3D" parent="Roads" unique_id=2065177168]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 235, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines36" unique_id=1072849923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines37" type="Node3D" parent="Roads" unique_id=769022361]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 260, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines37" unique_id=604461973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines20" type="Node3D" parent="Roads" unique_id=437381263]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.939327, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines20" unique_id=1584054889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines21" type="Node3D" parent="Roads" unique_id=584578173]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -48.871517, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines21" unique_id=1595154647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines22" type="Node3D" parent="Roads" unique_id=646950210]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -77, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines22" unique_id=738509565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines28" type="Node3D" parent="Roads/RoadLines22" unique_id=2094588366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.748604e-06, 0, -177)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines22/RoadLines28" unique_id=860958215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines23" type="Node3D" parent="Roads" unique_id=2063879602]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -109, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines23" unique_id=698346122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines24" type="Node3D" parent="Roads" unique_id=1500754334]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -138, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines24" unique_id=1444128360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines25" type="Node3D" parent="Roads" unique_id=1704609097]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -167, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines25" unique_id=893816966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines26" type="Node3D" parent="Roads" unique_id=312768244]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -196, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines26" unique_id=1976156587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines27" type="Node3D" parent="Roads" unique_id=1204084738]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -225, 0, 0.7)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines27" unique_id=1472450531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines10" type="Node3D" parent="Roads" unique_id=1589348919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines10" unique_id=1649278188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines11" type="Node3D" parent="Roads" unique_id=196628680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 65)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines11" unique_id=1143857710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines12" type="Node3D" parent="Roads" unique_id=2030372577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 97)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines12" unique_id=521746802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines13" type="Node3D" parent="Roads" unique_id=1031886276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 127)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines13" unique_id=1227250838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines14" type="Node3D" parent="Roads" unique_id=404917775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 159)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines14" unique_id=688071097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines15" type="Node3D" parent="Roads" unique_id=1999616032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 191)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines15" unique_id=353156511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines16" type="Node3D" parent="Roads" unique_id=2132279176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 223)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines16" unique_id=130713600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines17" type="Node3D" parent="Roads" unique_id=486040457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 255)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines17" unique_id=939657244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines18" type="Node3D" parent="Roads" unique_id=1040241802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 287)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines18" unique_id=1359467289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines2" type="Node3D" parent="Roads" unique_id=1777117496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.044289)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines2" unique_id=1559667245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines3" type="Node3D" parent="Roads" unique_id=1388675114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -59.980946)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines3" unique_id=1822834590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines4" type="Node3D" parent="Roads" unique_id=54057403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -91)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines4" unique_id=92701380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines5" type="Node3D" parent="Roads" unique_id=413900652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -123)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines5" unique_id=1287279907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines6" type="Node3D" parent="Roads" unique_id=1014266695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines6" unique_id=592330496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines7" type="Node3D" parent="Roads" unique_id=1911352632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -190)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines7" unique_id=194985066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines8" type="Node3D" parent="Roads" unique_id=1106814221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -222)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines8" unique_id=932863129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="RoadLines9" type="Node3D" parent="Roads" unique_id=2088006342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -254)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Roads/RoadLines9" unique_id=1117074756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -19.026222)
+mesh = SubResource("BoxMesh_chq8d")
+
+[node name="Zones" type="Node3D" parent="." unique_id=206688083]
+
+[node name="Residential_Block_01" type="MeshInstance3D" parent="Zones" unique_id=467614048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.861942, 0.04, -42.241188)
+mesh = SubResource("BoxMesh_2mdg4")
+
+[node name="Residential_Lots" type="Node3D" parent="Zones/Residential_Block_01" unique_id=1641817295]
+
+[node name="Lot_01" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=1803259754 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.000448, 0.027000003, -20.046185)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_01" unique_id=2037987071]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_01/LotArea" unique_id=1696875570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9427662, 0, 0.6479988)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_01" unique_id=2105523297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9455943, 7.054078)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_07" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=2133961023 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, 19.979176)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_07"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_07" unique_id=1675289499]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_07/LotArea" unique_id=1515361082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_07" unique_id=1435107635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9455943, 9.138408)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_02" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=1252045085 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0.02, 19.929)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_02"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_02" unique_id=1413907210]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_02/LotArea" unique_id=630104746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_02" unique_id=851749482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9455943, 7.054078)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_03" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=1867843779 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.02, 20)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_03"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_03" unique_id=852715675]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_03/LotArea" unique_id=1831965605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_03" unique_id=1071322952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8671722, 8.573458, 7.210655)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_04" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=2024676417 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.02, -20)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_04"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_04" unique_id=743854929]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_04/LotArea" unique_id=1165419323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_04" unique_id=996837552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7336884, 9.760048, -3.1829414)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_05" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=936396451 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, -20.185707)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_05"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_05" unique_id=1135045001]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_05/LotArea" unique_id=84005592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_05" unique_id=1055162942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8075066, 7.196464, -1.9190674)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_06" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=186853280 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, 0.159)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_06"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_06" unique_id=163815051]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_06/LotArea" unique_id=1344962290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_06" unique_id=1708241516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9704285, 9.549918, 0)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_08" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=544521444 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.02, 0.159)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_08"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_08" unique_id=2032765113]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_08/LotArea" unique_id=534206664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_08" unique_id=460716693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.954102, 9.949003, 0)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_09" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots" unique_id=1568293855 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0.02, 0.09164429)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_09"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_09" unique_id=340408973]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_09/LotArea" unique_id=873964195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08073044)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Lots/Lot_09" unique_id=161426121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1026783, 10.496969, -7.240036)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Zones/Residential_Block_01" unique_id=1401500019]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_01/StaticBody3D" unique_id=1908102999]
+shape = SubResource("ConcavePolygonShape3D_43kdj")
+
+[node name="Residential_Roads" type="Node3D" parent="Zones/Residential_Block_01" unique_id=225107114]
+
+[node name="Res_Road_H_01" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Roads" unique_id=347887030 groups=["roads"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.807999, 0.059999995, -0.56217575)
+mesh = SubResource("BoxMesh_82etk")
+
+[node name="Res_Road_H_03" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Roads" unique_id=593478594 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3536835, 0.050000004, -33.068214)
+mesh = SubResource("BoxMesh_82etk")
+
+[node name="Res_Road_H_02" type="MeshInstance3D" parent="Zones/Residential_Block_01/Residential_Roads" unique_id=955338301 groups=["roads"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.915539, 0.050000004, -0.18039703)
+mesh = SubResource("BoxMesh_82etk")
+
+[node name="Driveway_01" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=230047807 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.885223, 0, 7.029194)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_02" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=547805313 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.885223, 0, 27.526508)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_03" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=659072028 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626472, 0, 27.526508)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_04" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=2027394387 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.750248, 0, 7.511158)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_05" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=849600197 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7212257, 0, -12.319443)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_06" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=225660982 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.152386, 0, -12.319443)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_07" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=1984237186 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.255964, 0, -12.319443)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_08" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=869177753 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.656155, 0, 8.805626)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_09" type="MeshInstance3D" parent="Zones/Residential_Block_01" unique_id=1140131821 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.050526, 0, 27.819296)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Sidewalks" type="Node3D" parent="Zones/Residential_Block_01" unique_id=1197682496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_01/Sidewalks" unique_id=1750377899]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.596529, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks5" type="Node3D" parent="Zones/Residential_Block_01" unique_id=1784840211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_01/Sidewalks5" unique_id=866674735]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30.87945, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks2" type="Node3D" parent="Zones/Residential_Block_01" unique_id=1132301719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_01/Sidewalks2" unique_id=864266116]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.010708, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks3" type="Node3D" parent="Zones/Residential_Block_01" unique_id=1250393039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.864422, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_01/Sidewalks3" unique_id=1262167277]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.8387413, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks4" type="Node3D" parent="Zones/Residential_Block_01" unique_id=125300986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.864422, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_01/Sidewalks4" unique_id=122642311]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.896427, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Houses" type="Node3D" parent="Zones/Residential_Block_01" unique_id=1044556071]
+
+[node name="Decorations" type="Node3D" parent="Zones/Residential_Block_01" unique_id=1052894288]
+
+[node name="Lights" type="Node3D" parent="Zones/Residential_Block_01" unique_id=167239710]
+
+[node name="Residential_Block_02" type="MeshInstance3D" parent="Zones" unique_id=1390630258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.861942, 0.04, -108.41971)
+mesh = SubResource("BoxMesh_2mdg4")
+
+[node name="Residential_Lots" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1673835604]
+
+[node name="Lot_10" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=64937325 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.000448, 0.027000003, -20.046185)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_10"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_10" unique_id=71952738]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_10/LotArea" unique_id=207825566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9427662, 0, 0.6479988)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_10" unique_id=567242345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9455943, 7.054078)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_11" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=446715680 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, 19.979176)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_11"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_11" unique_id=1820458894]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_11/LotArea" unique_id=168673254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_11" unique_id=1216426438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9455943, 9.138408)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_12" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=367346904 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0.02, 19.929)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_12"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_12" unique_id=710553714]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_12/LotArea" unique_id=246202649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_12" unique_id=1575618905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9455943, 7.054078)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_13" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=1181481600 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.02, 20)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_13"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_13" unique_id=1609584869]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_13/LotArea" unique_id=655519417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_13" unique_id=1096406433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8671722, 8.573458, 7.210655)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_14" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=172547091 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.02, -20)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_14"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_14" unique_id=874046797]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_14/LotArea" unique_id=1747264871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_14" unique_id=208341204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7336884, 9.760048, -3.1829414)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_15" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=549650025 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, -20.185707)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_15"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_15" unique_id=1473717845]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_15/LotArea" unique_id=1700309510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_15" unique_id=127880287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8075066, 7.196464, -1.9190674)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_16" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=1554016925 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, 0.159)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_16"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_16" unique_id=366667211]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_16/LotArea" unique_id=1603893583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_16" unique_id=52083828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9704285, 9.549918, 0)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_17" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=1708201097 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0.02, 0.159)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_17"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_17" unique_id=142633189]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_17/LotArea" unique_id=527641561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6475487)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_17" unique_id=1232028154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.954102, 9.949003, 0)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="Lot_18" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots" unique_id=582247434 groups=["delivery_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0.02, 0.09164429)
+mesh = SubResource("BoxMesh_1yme3")
+script = ExtResource("2_e548m")
+property_id = "lot_18"
+house_scene = ExtResource("3_43kdj")
+
+[node name="LotArea" type="Area3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_18" unique_id=682521327]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_18/LotArea" unique_id=783017447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08073044)
+shape = SubResource("BoxShape3D_r6o8p")
+
+[node name="DeliveryMarker" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Lots/Lot_18" unique_id=1835348818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1026783, 10.496969, -7.240036)
+visible = false
+mesh = SubResource("SphereMesh_8yspe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Zones/Residential_Block_02" unique_id=801949388]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zones/Residential_Block_02/StaticBody3D" unique_id=303450167]
+shape = SubResource("ConcavePolygonShape3D_43kdj")
+
+[node name="Residential_Roads" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1233860091]
+
+[node name="Res_Road_H_01" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Roads" unique_id=1409293052 groups=["roads"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.808, 0.06, -0.047)
+mesh = SubResource("BoxMesh_82etk")
+
+[node name="Res_Road_H_03" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Roads" unique_id=298222238 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.067993164, 0.050000004, -33.068214)
+mesh = SubResource("BoxMesh_82etk")
+
+[node name="Res_Road_H_02" type="MeshInstance3D" parent="Zones/Residential_Block_02/Residential_Roads" unique_id=877651164 groups=["roads"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.915539, 0.050000004, -0.18039703)
+mesh = SubResource("BoxMesh_82etk")
+
+[node name="Driveway_10" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=271940489 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.885223, 0, 7.029194)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_11" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=506433695 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.885223, 0, 27.526508)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_12" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=1066755676 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626472, 0, 27.526508)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_13" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=1649450324 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.750248, 0, 7.511158)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_14" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=1347575900 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7212257, 0, -12.319443)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_15" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=1118269445 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.152386, 0, -12.319443)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_17" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=95677654 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.255964, 0, -12.319443)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_18" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=1980494649 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.656155, 0, 8.805626)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Driveway_16" type="MeshInstance3D" parent="Zones/Residential_Block_02" unique_id=586118657 groups=["roads"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.050526, 0, 27.819296)
+mesh = SubResource("BoxMesh_kxjuj")
+
+[node name="Sidewalks6" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1683868170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_02/Sidewalks6" unique_id=99888502]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.596529, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks7" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1862199526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_02/Sidewalks7" unique_id=1268706065]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -30.87945, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks8" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1519435053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_02/Sidewalks8" unique_id=824514863]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.010708, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks9" type="Node3D" parent="Zones/Residential_Block_02" unique_id=651103309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.864422, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_02/Sidewalks9" unique_id=1385007877]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.8387413, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Sidewalks10" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1834527110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.864422, 0.12, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Zones/Residential_Block_02/Sidewalks10" unique_id=334307464]
+transform = Transform3D(-4.371139e-08, 0, 1.0712237, 0, 1, 0, -1, 0, -4.6824677e-08, -11.896427, 0.120000005, 0)
+mesh = SubResource("BoxMesh_82x0j")
+
+[node name="Houses" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1735904080]
+
+[node name="Decorations" type="Node3D" parent="Zones/Residential_Block_02" unique_id=852620532]
+
+[node name="Tree_01" parent="Zones/Residential_Block_02/Decorations" unique_id=282423292 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.687, 0, -26)
+
+[node name="Tree_05" parent="Zones/Residential_Block_02/Decorations" unique_id=920393406 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.687, 0, 28.8)
+
+[node name="Tree_02" parent="Zones/Residential_Block_02/Decorations" unique_id=2110773925 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.224, 0, -26)
+
+[node name="Tree_21" parent="Zones/Residential_Block_02/Decorations" unique_id=1919334464 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.74, 0, -26)
+
+[node name="Tree_06" parent="Zones/Residential_Block_02/Decorations" unique_id=702875151 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.782, 0, -5.9)
+
+[node name="Tree_20" parent="Zones/Residential_Block_02/Decorations" unique_id=2086989926 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.706, 0, -5.9)
+
+[node name="Tree_24" parent="Zones/Residential_Block_02/Decorations" unique_id=1882739973 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.703, 0, -5.9)
+
+[node name="Tree_07" parent="Zones/Residential_Block_02/Decorations" unique_id=1981989614 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.057, 0, 28.8)
+
+[node name="Tree_22" parent="Zones/Residential_Block_02/Decorations" unique_id=1739801826 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.943, 0, 28.8)
+
+[node name="Tree_14" parent="Zones/Residential_Block_02/Decorations" unique_id=337898584 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.567, 0, 14.7)
+
+[node name="Tree_19" parent="Zones/Residential_Block_02/Decorations" unique_id=1824552706 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.605, 0, 14.7)
+
+[node name="Tree_23" parent="Zones/Residential_Block_02/Decorations" unique_id=1348733091 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.542, 0, 14.7)
+
+[node name="Tree_03" parent="Zones/Residential_Block_02/Decorations" unique_id=2040432837 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40168, 0, -26.61232)
+
+[node name="Tree_15" parent="Zones/Residential_Block_02/Decorations" unique_id=1400661972 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.776, 0, -26)
+
+[node name="Tree_16" parent="Zones/Residential_Block_02/Decorations" unique_id=705934218 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.997, 0, -5.9)
+
+[node name="Tree_17" parent="Zones/Residential_Block_02/Decorations" unique_id=798989055 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.997, 0, 14.7)
+
+[node name="Tree_18" parent="Zones/Residential_Block_02/Decorations" unique_id=2064571128 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.997, 0, 28.8)
+
+[node name="Tree_13" parent="Zones/Residential_Block_02/Decorations" unique_id=1683315271 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -26.612)
+
+[node name="Tree_04" parent="Zones/Residential_Block_02/Decorations" unique_id=2055449342 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40168, 0, 14.730225)
+
+[node name="Tree_11" parent="Zones/Residential_Block_02/Decorations" unique_id=1667170441 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40168, 0, -5.9445114)
+
+[node name="Tree_12" parent="Zones/Residential_Block_02/Decorations" unique_id=702938867 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -5.945)
+
+[node name="Tree_10" parent="Zones/Residential_Block_02/Decorations" unique_id=785464535 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 14.73)
+
+[node name="Tree_08" parent="Zones/Residential_Block_02/Decorations" unique_id=1324942422 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.402, 0, 28.8)
+
+[node name="Tree_09" parent="Zones/Residential_Block_02/Decorations" unique_id=86677765 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 28.822914)
+
+[node name="Tree_26" parent="Zones/Residential_Block_02/Decorations" unique_id=97768127 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.51652, 0, 81.93479)
+
+[node name="Tree_27" parent="Zones/Residential_Block_02/Decorations" unique_id=2089458953 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 59.497)
+
+[node name="Tree_28" parent="Zones/Residential_Block_02/Decorations" unique_id=158861756 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 40.611)
+
+[node name="Tree_29" parent="Zones/Residential_Block_02/Decorations" unique_id=971635670 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.821, 0, 40.6)
+
+[node name="Tree_30" parent="Zones/Residential_Block_02/Decorations" unique_id=1790144030 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.821, 0, 59.4)
+
+[node name="Tree_31" parent="Zones/Residential_Block_02/Decorations" unique_id=1435532309 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.821, 0, 81.9)
+
+[node name="Tree_32" parent="Zones/Residential_Block_02/Decorations" unique_id=2013751258 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 95.7)
+
+[node name="Tree_33" parent="Zones/Residential_Block_02/Decorations" unique_id=816052627 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.963, 0, 95.7)
+
+[node name="Tree_34" parent="Zones/Residential_Block_02/Decorations" unique_id=447664504 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.963, 0, 81.9)
+
+[node name="Tree_35" parent="Zones/Residential_Block_02/Decorations" unique_id=2025314115 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.963, 0, 59.4)
+
+[node name="Tree_36" parent="Zones/Residential_Block_02/Decorations" unique_id=1942976155 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.963, 0, 40.6)
+
+[node name="Tree_37" parent="Zones/Residential_Block_02/Decorations" unique_id=1806119484 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97, 0, 40.6)
+
+[node name="Tree_38" parent="Zones/Residential_Block_02/Decorations" unique_id=1824990297 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97, 0, 59.4)
+
+[node name="Tree_39" parent="Zones/Residential_Block_02/Decorations" unique_id=170845050 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97, 0, 81.9)
+
+[node name="Tree_40" parent="Zones/Residential_Block_02/Decorations" unique_id=81272154 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97, 0, 95.7)
+
+[node name="Tree_41" parent="Zones/Residential_Block_02/Decorations" unique_id=1737230468 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.526, 0, 95.7)
+
+[node name="Tree_42" parent="Zones/Residential_Block_02/Decorations" unique_id=458130122 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.526, 0, 81.9)
+
+[node name="Tree_43" parent="Zones/Residential_Block_02/Decorations" unique_id=2088958979 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.526, 0, 59.4)
+
+[node name="Tree_44" parent="Zones/Residential_Block_02/Decorations" unique_id=1515620060 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.526, 0, 40.6)
+
+[node name="Tree_45" parent="Zones/Residential_Block_02/Decorations" unique_id=1107839109 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.515, 0, 40.6)
+
+[node name="Tree_46" parent="Zones/Residential_Block_02/Decorations" unique_id=763925753 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.515, 0, 59.4)
+
+[node name="Tree_47" parent="Zones/Residential_Block_02/Decorations" unique_id=866791655 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.515, 0, 81.9)
+
+[node name="Tree_48" parent="Zones/Residential_Block_02/Decorations" unique_id=1789917 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.515, 0, 95.7)
+
+[node name="Tree_25" parent="Zones/Residential_Block_02/Decorations" unique_id=1826398864 instance=ExtResource("7_1yme3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.935968, 0, 95.70788)
+
+[node name="Lights" type="Node3D" parent="Zones/Residential_Block_02" unique_id=1936673049]
+
+[node name="Grid" type="Node3D" parent="." unique_id=736604594]
+script = ExtResource("1_1xnww")
+line_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Infrastructure" type="Node3D" parent="." unique_id=1889061231]
+
+[node name="DeliveryHub" type="Node3D" parent="Infrastructure" unique_id=508017397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.070464, 0, 8.582378)
+script = ExtResource("4_kxjuj")
+
+[node name="DeliveryHub_Visual" type="MeshInstance3D" parent="Infrastructure/DeliveryHub" unique_id=1956817618]
+transform = Transform3D(0.9999619, 0, 0.008726535, 0, 1, 0, -0.008726535, 0, 0.9999619, 0, 0, 0)
+mesh = SubResource("BoxMesh_r6o8p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Infrastructure/DeliveryHub" unique_id=755482717]
+shape = SubResource("BoxShape3D_8yspe")
+
+[node name="InteractionArea" type="Area3D" parent="Infrastructure/DeliveryHub" unique_id=2103392274]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Infrastructure/DeliveryHub/InteractionArea" unique_id=978226016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_2mdg4")
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1069925502]
+
+[node name="Decorations" type="Node3D" parent="." unique_id=1403064387]
+
+[node name="StreetLight" parent="Decorations" unique_id=1709547389 instance=ExtResource("4_y3jag")]

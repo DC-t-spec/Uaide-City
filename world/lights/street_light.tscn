@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bob7y1x8qgnns"]
+
+[ext_resource type="Script" uid="uid://cwhxnd0j6yvd2" path="res://world/lights/street_light.gd" id="1_m87oh"]
+
+[node name="StreetLight" type="Node3D" unique_id=1709547389]
+script = ExtResource("1_m87oh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1765486202]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1190532399]
+light_color = Color(0.9289386, 0.7867148, 0.22393396, 1)
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 10.0
