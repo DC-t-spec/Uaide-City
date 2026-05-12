@@ -8,6 +8,7 @@ extends Node3D
 @export var road_safe_distance: float = 7.0
 @export var spawn_y: float = 0.15
 @export var clear_previous: bool = true
+@export var tree_visual_scale: float = 1.15
 
 var spawned_positions: Array[Vector3] = []
 
@@ -45,6 +46,7 @@ func spawn_trees() -> void:
 		tree.name = "Tree_Auto_%02d" % spawned_positions.size()
 		add_child(tree)
 		tree.global_position = pos
+		tree.scale = Vector3.ONE * tree_visual_scale
 
 		spawned_positions.append(pos)
 
