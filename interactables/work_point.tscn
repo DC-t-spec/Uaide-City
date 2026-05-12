@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ru00dgmvt73y"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_44d7j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qn37"]
+
+[node name="WorkPoint" type="Node3D" unique_id=944036425]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=3110686]
+mesh = SubResource("BoxMesh_44d7j")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=861293661]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=900688998]
+shape = SubResource("BoxShape3D_3qn37")

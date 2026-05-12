@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bl2fpy8ntkdwe"]
+
+[ext_resource type="Script" uid="uid://dheb5xeuy1xxp" path="res://interactables/shop_point.gd" id="1_v5u82"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v5u82"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5u82"]
+size = Vector3(1.8269043, 1, 1)
+
+[node name="ShopPoint" type="Node3D" unique_id=39969202]
+script = ExtResource("1_v5u82")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2106388059]
+transform = Transform3D(1.9017895, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_v5u82")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2002207294]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1622107788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 0, 0)
+shape = SubResource("BoxShape3D_v5u82")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1110644]
