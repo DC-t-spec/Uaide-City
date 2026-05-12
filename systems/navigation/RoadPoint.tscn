@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://j6g8k3flke0y"]
+
+[ext_resource type="Script" uid="uid://r1gm8swd8eto" path="res://systems/navigation/RoadPoint.gd" id="1_oiwcw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_doott"]
+radius = 0.25
+
+[node name="RoadPoint" type="Node3D" unique_id=1722168669]
+script = ExtResource("1_oiwcw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=760459405]
+mesh = SubResource("SphereMesh_doott")
