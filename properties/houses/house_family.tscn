@@ -1,46 +1,56 @@
 [gd_scene format=3 uid="uid://c17rguvsqx51v"]
 [ext_resource type="Script" uid="uid://d2cuk1klri7q" path="res://properties/property_house.gd" id="1_vnkx2"]
 [sub_resource type="StandardMaterial3D" id="mat_wall"]
-albedo_color = Color(0.87,0.85,0.8,1)
+albedo_color = Color(0.9,0.88,0.84,1)
+roughness = 0.95
 [sub_resource type="StandardMaterial3D" id="mat_roof"]
-albedo_color = Color(0.18,0.2,0.24,1)
+albedo_color = Color(0.2,0.22,0.25,1)
 [sub_resource type="StandardMaterial3D" id="mat_wood"]
-albedo_color = Color(0.42,0.27,0.16,1)
-[sub_resource type="StandardMaterial3D" id="mat_porch"]
-albedo_color = Color(0.93,0.92,0.88,1)
+albedo_color = Color(0.34,0.23,0.16,1)
+[sub_resource type="StandardMaterial3D" id="mat_stone"]
+albedo_color = Color(0.55,0.56,0.58,1)
+[sub_resource type="StandardMaterial3D" id="mat_trim"]
+albedo_color = Color(0.96,0.95,0.93,1)
 [sub_resource type="StandardMaterial3D" id="mat_glass"]
-albedo_color = Color(0.56,0.72,0.84,0.85)
+albedo_color = Color(0.34,0.52,0.69,0.82)
 transparency = 1
-roughness = 0.12
+roughness = 0.08
+emission_enabled = true
+emission = Color(0.04,0.08,0.12,1)
+emission_energy_multiplier = 0.3
 [sub_resource type="BoxMesh" id="body_main"]
 material = SubResource("mat_wall")
-size = Vector3(8.8,2.9,7.1)
+size = Vector3(8.6,2.9,6.8)
 [sub_resource type="BoxMesh" id="porch_block"]
-material = SubResource("mat_porch")
-size = Vector3(4.8,2.4,1.8)
+material = SubResource("mat_trim")
+size = Vector3(5.1,2.5,2.1)
 [sub_resource type="PrismMesh" id="roof_main"]
 material = SubResource("mat_roof")
-size = Vector3(9.8,2.0,8.0)
-[sub_resource type="PrismMesh" id="roof_porch"]
+size = Vector3(10.2,2.2,8.6)
+[sub_resource type="BoxMesh" id="roof_eave"]
 material = SubResource("mat_roof")
-size = Vector3(5.2,1.0,2.6)
-[sub_resource type="CylinderMesh" id="pillar"]
-material = SubResource("mat_porch")
-height = 2.2
-top_radius = 0.13
-bottom_radius = 0.16
+size = Vector3(9.8,0.26,8.2)
+[sub_resource type="BoxMesh" id="pillar"]
+material = SubResource("mat_stone")
+size = Vector3(0.42,2.35,0.42)
+[sub_resource type="BoxMesh" id="door_frame"]
+material = SubResource("mat_trim")
+size = Vector3(1.55,2.35,0.22)
 [sub_resource type="BoxMesh" id="door"]
 material = SubResource("mat_wood")
-size = Vector3(1.25,2.1,0.1)
+size = Vector3(1.2,2.1,0.1)
+[sub_resource type="BoxMesh" id="window_frame"]
+material = SubResource("mat_trim")
+size = Vector3(2.2,1.55,0.2)
 [sub_resource type="BoxMesh" id="window_big"]
 material = SubResource("mat_glass")
-size = Vector3(1.9,1.3,0.08)
+size = Vector3(1.95,1.3,0.08)
 [sub_resource type="BoxMesh" id="stair1"]
-material = SubResource("mat_porch")
-size = Vector3(3.6,0.18,1.4)
+material = SubResource("mat_stone")
+size = Vector3(4.2,0.2,1.7)
 [sub_resource type="BoxMesh" id="stair2"]
-material = SubResource("mat_porch")
-size = Vector3(2.8,0.18,1.0)
+material = SubResource("mat_trim")
+size = Vector3(3.3,0.2,1.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pmfma"]
 size = Vector3(10,3,10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vnkx2"]
@@ -54,35 +64,44 @@ house_visual_type = "family"
 [node name="Body" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
 transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.45,0)
 mesh = SubResource("body_main")
-[node name="MainRoof" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(-4.37114e-08,0,-1,0,1,0,1,0,-4.37114e-08,0,4.0,0)
-mesh = SubResource("roof_main")
 [node name="PorchBlock" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.2,-4.15)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.25,-4.1)
 mesh = SubResource("porch_block")
-[node name="PorchRoof" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(-4.37114e-08,0,-1,0,1,0,1,0,-4.37114e-08,0,2.9,-4.2)
-mesh = SubResource("roof_porch")
+[node name="MainRoof" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
+transform = Transform3D(-4.37114e-08,0,-1,0,1,0,1,0,-4.37114e-08,0,4.05,0)
+mesh = SubResource("roof_main")
+[node name="RoofEave" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0,2.9,0)
+mesh = SubResource("roof_eave")
 [node name="PillarL" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,-1.5,1.1,-4.95)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,-1.7,1.18,-5.05)
 mesh = SubResource("pillar")
 [node name="PillarR" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,1.5,1.1,-4.95)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,1.7,1.18,-5.05)
 mesh = SubResource("pillar")
+[node name="DoorFrame" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.08,-5.1)
+mesh = SubResource("door_frame")
 [node name="Door" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.05,-5.03)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0,1.05,-5.19)
 mesh = SubResource("door")
+[node name="WindowFrameL" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,-2.75,1.9,-3.62)
+mesh = SubResource("window_frame")
 [node name="WindowL" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,-2.7,1.85,-3.55)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,-2.75,1.9,-3.7)
 mesh = SubResource("window_big")
+[node name="WindowFrameR" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
+transform = Transform3D(1,0,0,0,1,0,0,0,1,2.75,1.9,-3.62)
+mesh = SubResource("window_frame")
 [node name="WindowR" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,2.7,1.85,-3.55)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,2.75,1.9,-3.7)
 mesh = SubResource("window_big")
 [node name="Step1" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,0,0.1,-6.1)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0,0.11,-6.18)
 mesh = SubResource("stair1")
 [node name="Step2" type="MeshInstance3D" parent="HouseMesh/FamilyHouse"]
-transform = Transform3D(1,0,0,0,1,0,0,0,1,0,0.28,-5.65)
+transform = Transform3D(1,0,0,0,1,0,0,0,1,0,0.31,-5.72)
 mesh = SubResource("stair2")
 [node name="InteractionArea" type="Area3D" parent="." unique_id=1332599252]
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1216430814]
