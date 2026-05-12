@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b0tcrgsdnhlno"]
+
+[ext_resource type="Script" uid="uid://bmmm2b1mjx5a0" path="res://jobs/garbage_task_point.gd" id="1_qmpdm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qmpdm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jxh5l"]
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmpdm"]
+albedo_color = Color(0.94189936, 0.97588617, 0.22228932, 1)
+emission_enabled = true
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_jxh5l"]
+material = SubResource("StandardMaterial3D_qmpdm")
+
+[node name="GarbageTaskPoint" type="Node3D" unique_id=1780784694]
+script = ExtResource("1_qmpdm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=913169846]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.3, 0)
+mesh = SubResource("BoxMesh_qmpdm")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=375032007]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1696421031]
+shape = SubResource("SphereShape3D_jxh5l")
+
+[node name="Marker" type="Node3D" parent="." unique_id=1096899296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker" unique_id=666383635]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("SphereMesh_jxh5l")

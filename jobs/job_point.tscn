@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cm5k5jb6bm6ys"]
+
+[ext_resource type="Script" uid="uid://bttf43m71ntyu" path="res://jobs/job_point.gd" id="1_xbfh3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cd3or"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iwwkw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rvkrn"]
+radius = 3.0
+
+[node name="JobPoint" type="Node3D" unique_id=1564017015]
+script = ExtResource("1_xbfh3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=385044666]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_cd3or")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=30627710]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1512954106]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_iwwkw")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=1641768055]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=159092820]
+shape = SubResource("SphereShape3D_rvkrn")
