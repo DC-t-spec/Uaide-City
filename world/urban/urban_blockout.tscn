@@ -26,7 +26,7 @@ metallic_specular = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_y3jag"]
 material = SubResource("StandardMaterial3D_43kdj")
-size = Vector3(12, 0.05, 300)
+size = Vector3(15, 0.05, 300)
 
 [sub_resource type="BoxMesh" id="BoxMesh_chq8d"]
 size = Vector3(0.15, 0.05, 5)
@@ -64,21 +64,21 @@ albedo_color = Color(0.22745098, 0.22745098, 0.23529412, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_82etk"]
 material = SubResource("StandardMaterial3D_2mdg4")
-size = Vector3(61, 0.2, 6)
+size = Vector3(61, 0.2, 8.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3jag"]
 albedo_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kxjuj"]
 material = SubResource("StandardMaterial3D_y3jag")
-size = Vector3(2, 0.1, 5)
+size = Vector3(2.4, 0.1, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chq8d"]
 albedo_color = Color(0.66348356, 0.74593806, 0.6976554, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_82x0j"]
 material = SubResource("StandardMaterial3D_chq8d")
-size = Vector3(60, 0.08, 2)
+size = Vector3(60, 0.08, 2.6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yme3"]
 albedo_color = Color(0.33022344, 0.4677996, 0.86410797, 1)

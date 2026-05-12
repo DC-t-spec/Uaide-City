@@ -17,10 +17,10 @@ func _ready() -> void:
 	camera_pivot = $CameraPivot
 	camera = $CameraPivot/Camera3D
 
-	camera_pivot.position = Vector3(0, 1.8, 0)
+	camera_pivot.position = Vector3(0, 1.65, 0)
 	camera_pivot.rotation = Vector3.ZERO
 
-	camera.position = Vector3(0, 1.5, 7)
+	camera.position = Vector3(0, 1.35, 7)
 	camera.rotation_degrees = Vector3(-12, 0, 0)
 	camera.current = true
 
