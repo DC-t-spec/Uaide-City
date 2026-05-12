@@ -139,7 +139,7 @@ func _update_visual_phase(time_float: float) -> void:
 		midday_strength = clamp(midday_strength, 0.0, 1.0)
 
 		_apply_visual(
-			lerp(1.35, 1.75, midday_strength),
+			lerp(1.05, 1.35, midday_strength),
 			Color(1.0, 0.95, 0.84).lerp(Color(1.0, 1.0, 0.94), midday_strength),
 			Color(0.48, 0.74, 1.0).lerp(Color(0.42, 0.70, 1.0), midday_strength),
 			Color(0.72, 0.78, 0.86).lerp(Color(0.82, 0.86, 0.92), midday_strength),
