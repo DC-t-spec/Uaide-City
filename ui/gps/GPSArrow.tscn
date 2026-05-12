@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c43yps7tndt6h"]
+
+[ext_resource type="Script" uid="uid://bprdugbv6fk8s" path="res://ui/gps/GPSArrow.gd" id="1_7jlem"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yx06c"]
+albedo_color = Color(0.83137256, 0.44705883, 0.27058825, 1)
+emission_enabled = true
+emission = Color(0.92156863, 0.8, 0.09019608, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4rked"]
+material = SubResource("StandardMaterial3D_yx06c")
+top_radius = 0.05
+bottom_radius = 0.35
+height = 0.8
+
+[node name="GPSArrow" type="Node3D" unique_id=1156328774]
+script = ExtResource("1_7jlem")
+
+[node name="ArrowVisual" type="MeshInstance3D" parent="." unique_id=2014985526]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_4rked")

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bmwswaojqdupu"]
+
+[ext_resource type="Script" uid="uid://dwypvtf1c3i80" path="res://ui/minimap/MiniMap.gd" id="1_376ls"]
+
+[node name="MiniMap" type="Control" unique_id=2014195123]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -249.0
+offset_right = 240.0
+offset_bottom = -39.0
+grow_vertical = 0
+script = ExtResource("1_376ls")
+
+[node name="Panel" type="Panel" parent="." unique_id=1648530589]
+layout_mode = 0
+offset_right = 220.0
+offset_bottom = 220.0
+
+[node name="MapBackground" type="ColorRect" parent="Panel" unique_id=868032151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33, 0.33, 0.33, 1)
+
+[node name="PlayerIcon" type="ColorRect" parent="Panel" unique_id=213922283]
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(0.49411765, 1, 0.35686275, 1)
+
+[node name="TargetIcon" type="ColorRect" parent="Panel" unique_id=1522430144]
+visible = false
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(1, 0.19215687, 0.07058824, 1)
+
+[node name="DirectionArrow" type="Label" parent="Panel" unique_id=150059859]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DistanceLabel" type="Label" parent="Panel" unique_id=1253468239]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 188.0
+offset_right = 217.0
+offset_bottom = 223.0
+text = "Sem destino"
+horizontal_alignment = 1

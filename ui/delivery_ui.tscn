@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b8t5aafysk0as"]
+
+[ext_resource type="Script" uid="uid://b2bgqmnyxn5vl" path="res://ui/delivery_ui.gd" id="1_d5oqp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5oqp"]
+bg_color = Color(0.07568253, 0.03024194, 0.04005776, 1)
+
+[node name="DeliveryUi" type="Control" unique_id=1637616500]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5oqp")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1234560492]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 293.0
+offset_right = 465.0
+offset_bottom = 413.0
+
+[node name="DeliveryPanel" type="Panel" parent="MarginContainer" unique_id=733039862]
+custom_minimum_size = Vector2(260, 185)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d5oqp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/DeliveryPanel" unique_id=1349088862]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 6
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/DeliveryPanel/VBoxContainer" unique_id=1663208282]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "ENTREGA
+"
+horizontal_alignment = 1
+
+[node name="DestinationLabel" type="Label" parent="MarginContainer/DeliveryPanel/VBoxContainer" unique_id=764099715]
+layout_mode = 2
+text = "Destino:
+"
+
+[node name="DistanceLabel" type="Label" parent="MarginContainer/DeliveryPanel/VBoxContainer" unique_id=1494733736]
+layout_mode = 2
+text = "Distância: -"
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/DeliveryPanel/VBoxContainer" unique_id=1137102466]
+layout_mode = 2
+text = "Tempo: -"
+
+[node name="RewardLabel" type="Label" parent="MarginContainer/DeliveryPanel/VBoxContainer" unique_id=1620729893]
+layout_mode = 2
+text = "Recompensa: -"
+
+[node name="HintLabel" type="Label" parent="MarginContainer/DeliveryPanel/VBoxContainer" unique_id=2031951699]
+layout_mode = 2

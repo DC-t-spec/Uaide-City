@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d4nd3nm1vuhub"]
+
+[node name="FinanceUi_tscn" type="CanvasLayer" unique_id=1467429233]
+
+[node name="Panel" type="Panel" parent="." unique_id=531355958]
+offset_left = 450.0
+offset_top = 93.0
+offset_right = 780.0
+offset_bottom = 253.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=896452880]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 474.0
+offset_bottom = 160.0
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=452359334]
+layout_mode = 2
+
+[node name="CashLabel" type="Label" parent="Panel/VBoxContainer" unique_id=543159239]
+layout_mode = 2
+
+[node name="BankLabel" type="Label" parent="Panel/VBoxContainer" unique_id=886461658]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="Panel/VBoxContainer" unique_id=983513520]
+layout_mode = 2
+
+[node name="PendingLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1115894879]
+layout_mode = 2
+
+[node name="TransactionsLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1682519886]
+layout_mode = 2
