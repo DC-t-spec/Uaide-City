@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dkyte752bmgcf"]
+
+[ext_resource type="Script" uid="uid://decpdaufeuaih" path="res://player/player_controller.gd.gd" id="1_xo3ru"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hjaqi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+height = 1.0
+
+[node name="Player" type="CharacterBody3D" unique_id=819609279 groups=["player"]]
+script = ExtResource("1_xo3ru")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1853973468]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_hjaqi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1020262626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_4flbx")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=656174081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=198828697]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.5, -6)
+current = true
